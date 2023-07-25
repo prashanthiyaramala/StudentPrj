@@ -1,0 +1,52 @@
+<div >
+
+  <nav class="navbar navbar-expand-sm bg-secondary bg-gradient navbar-dark">
+
+   <ul class="navbar-nav">
+     <li class="nav-item">
+       <a href="students" routerLinkActive="active" class="nav-link">Student List</a>
+     </li>
+     <li class="nav-item">
+       <a href="addStudent" routerLinkActive="active" class="nav-link">Add Student </a>
+     </li>
+
+   </ul>
+
+  </nav>
+
+
+ <div class="container">
+ <h3>Student List</h3>
+ <table class="table table-striped">
+   <thead>
+     <tr>
+       <th>Student Id</th>
+       <th> Name</th>
+       <th>Course</th>
+       <th>Fee</th>
+       <th>Actions</th>
+     </tr>
+   </thead>
+<tbody>
+     <tr *ngFor="let stud of students">
+       <td>{{stud.id}}</td>
+       <td>{{stud.name}}</td>
+       <td>{{stud.course}}</td>
+       <td>{{stud.fee}}</td>
+       <td>
+         <button (click)="updateStudent(stud.id)" class="btn btn-info">Update</button>
+         <button (click)="deleteStudent(stud.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+         <button (click)="studentDetail(stud.id)" class="btn btn-warning" style="margin-left:10px">View</button>
+        </td>
+     </tr>
+   </tbody>
+ </table>
+ </div>
+ </div>
+
+ <!-- <footer class="footer">
+   <div class="container">
+     <span>Student Management System</span>
+   </div>
+ </footer> -->
+
